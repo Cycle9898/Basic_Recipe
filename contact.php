@@ -14,7 +14,7 @@
 
         <h1 class="text-center mt-5 mb-5">Contactez nous</h1>
 
-        <form>
+        <form action="submit_contact.php" method="GET">
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
 
