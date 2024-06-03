@@ -19,6 +19,10 @@ require_once(__DIR__ . '/utils/functions.php');
 
         <h1 class="text-center mt-5 mb-5">Site de recettes</h1>
 
+        <!-- Login form -->
+        <?php require_once(__DIR__ . '/components/login.php'); ?>
+
+        <?php if (isset($loggedUser)) : ?>
         <div class="d-flex flex-column gap-3">
             <?php foreach (getRecipes($recipes) as $recipe) : ?>
                 <article>
@@ -28,6 +32,7 @@ require_once(__DIR__ . '/utils/functions.php');
                 </article>
                 <?php endforeach ?>
         </div>
+        <?php endif; ?>
     </div>
 
     <!-- Footer -->
