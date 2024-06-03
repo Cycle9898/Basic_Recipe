@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php
-    $email = $_GET['email'];
-    $message = $_GET['message'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
     if (
         !isset($email)
@@ -30,8 +30,8 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Rappel de vos informations</h5>
-            <p class="card-text"><b>Email</b> : <?php echo $_GET['email']; ?></p>
-            <p class="card-text"><b>Message</b> : <?php echo $_GET['message']; ?></p>
+            <p class="card-text"><b>Email</b> : <?php echo $email; ?></p>
+            <p class="card-text"><b>Message</b> : <?php echo strip_tags($message); ?></p>
         </div>
     </div>
 
