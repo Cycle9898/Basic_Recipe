@@ -1,29 +1,6 @@
 <?php
-$postData = $_POST;
-
-// Form validation
-if (isset($postData['email']) && isset($postData['password'])) {
-    if (!filter_var($postData['email'], FILTER_VALIDATE_EMAIL)) {
-        $errorMessage = 'Votre mail n\'est pas valide, merci de le vérifier';
-    } else {
-        foreach($users as $user) {
-            if ($user['email'] === $postData['email']
-            && $user['password'] === $postData['password']) {
-                $loggedUser = [
-                    'email' => $user['email']
-                ];
-            }
-        }
-
-        if (!isset($loggedUser)) {
-            $errorMessage = 'L\'email et/ou le mot de passe sont invalides, merci de les vérifier';
-        }
-    }
-}
-?>
-
-<?php if (!isset($loggedUser)) : ?>
-    <form action="index.php" method="POST">
+if (!isset($_SESSION['LOGGED_USER'])) : ?>
+    <form action="submit_login.php" method="POST">
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
 
@@ -36,9 +13,10 @@ if (isset($postData['email']) && isset($postData['password'])) {
             <input type="password" class="form-control" id="password" name="password" />
         </div>
 
-        <?php if (isset($errorMessage)) : ?>
+        <?php if (isset($_SESSION['LOGIN_ERROR_MESSAGE'])) : ?>
             <div class="mb-3 alert alert-danger" role="alert">
-                <?php echo $errorMessage; ?>
+                <?php echo $_SESSION['LOGIN_ERROR_MESSAGE'];
+                unset($_SESSION['LOGIN_ERROR_MESSAGE']); ?>
             </div>
         <?php endif; ?>
 
@@ -47,6 +25,6 @@ if (isset($postData['email']) && isset($postData['password'])) {
 
 <?php else : ?>
     <div class="alert alert-success" role="alert">
-        Bonjour <?php echo $loggedUser['email']; ?> et bienvenue sur le site !
+        Bonjour <?php echo $_SESSION['LOGGED_USER']['email']; ?> et bienvenue sur le site !
     </div>
 <?php endif ?>

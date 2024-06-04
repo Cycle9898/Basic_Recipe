@@ -53,13 +53,24 @@ if (isset($_FILES['screenshot']) && $_FILES['screenshot']['error'] === 0) {
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
+        <?php require_once(__DIR__ . '/components/header.php'); ?>
+
         <h1>Message bien reçu !</h1>
         
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Rappel de vos informations</h5>
+
                 <p class="card-text"><b>Email</b> : <?php echo $postData['email']; ?></p>
+
                 <p class="card-text"><b>Message</b> : <?php echo strip_tags($postData['message']); ?></p>
+
+                <?php if ($isFileLoaded) : ?>
+                    <div>
+                        La capture d'écran a bien été prise en compte!
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
         
