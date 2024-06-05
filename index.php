@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once(__DIR__ . '/database/credentials.php');
+require_once(__DIR__ . '/database/dbConnect.php');
 require_once(__DIR__ . '/utils/variables.php');
 require_once(__DIR__ . '/utils/functions.php');
 ?>
