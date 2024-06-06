@@ -28,11 +28,11 @@ require_once(__DIR__ . '/utils/functions.php');
         <div class="d-flex flex-column gap-3">
             <?php foreach (getRecipes($recipes) as $recipe) : ?>
                 <article>
-                    <h3 class="mb-3"><?php echo $recipe['title']; ?></h3>
+                    <h3 class="mb-3"><a href="read_recipe.php?id=<?php echo($recipe['recipe_id']); ?>"><?php echo $recipe['title']; ?></a></h3>
 
                     <p><?php echo $recipe['recipe']; ?></p>
 
-                    <p class="font-italic"><?php echo displayAuthor($recipe['author'], $users); ?></p>
+                    <p class="fst-italic"><?php echo displayAuthor($recipe['author'], $users); ?></p>
 
                     <?php if (isset($_SESSION['LOGGED_USER']) && $recipe['author'] === $_SESSION['LOGGED_USER']['email']) : ?>
                     <ul class="list-group list-group-horizontal">
@@ -50,6 +50,4 @@ require_once(__DIR__ . '/utils/functions.php');
     <!-- Footer -->
     <?php require_once(__DIR__ . '/components/footer.php'); ?>
 </body>
-
-
 </html>
