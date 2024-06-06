@@ -39,7 +39,6 @@
 
             <button type="submit" class="btn btn-primary m-auto d-block">Envoyer</button>
         </form>
-        <br />
     </div>
 
     <!-- Footer component -->
