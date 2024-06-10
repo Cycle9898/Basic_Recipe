@@ -8,10 +8,16 @@ require_once('utils/isConnect.php')
     </div>
 
     <div class="mb-3">
+        <label for="review" class="form-label">Évaluer la recette (de 1 à 5)</label>
+
+        <input type="number" class="form-control" id="review" name="review" min="1" max="5" step="1" />
+    </div>
+
+    <div class="mb-3">
         <label for="comment" class="form-label">Poster un commentaire</label>
 
         <textarea class="form-control" placeholder="Votre commentaire..." name="comment" id="comment"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary">Poster</button>
+    <button type="submit" class="btn btn-primary">Poster mon évaluation</button>
 </form>
