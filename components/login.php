@@ -8,7 +8,7 @@ if (!isset($_SESSION['LOGGED_USER'])) : ?>
         </div>
 
         <div class="mb-3">
-            <label for="password" class="form-label">Votre message</label>
+            <label for="password" class="form-label">Password</label>
 
             <input type="password" class="form-control" id="password" name="password" />
         </div>
