@@ -1,6 +1,8 @@
-# Basic recipe
+# Basic Recipe
 
-Basic recipe is a website, without global styling or theme, written in PHP.
+Basic Recipe is a website, without global styling or theme, written in PHP.
+
+The goal of this project is to learn PHP.
 
 You can post, modify or delete your own recipe.
 
